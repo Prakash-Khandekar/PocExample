@@ -28,7 +28,7 @@ public class UserEnrollment {
 
 	@RequestMapping("/addUser") // register new user
 	public String saveUserDetails(@RequestBody UserInfo user) {
-		return service.insertEmployee(user);
+		return service.insertEmployee(user); 
 	}
 
 	@PutMapping("/modify") // 2- Edit User base on user id

@@ -15,8 +15,7 @@ public interface IUserService {
 	public String deleteEmployeeByEno(int eno) throws UserNotFoundException;
 
 	public List<UserInfo> getAll(String field);
-	
-	@Query
-	public List<UserInfo> findByFName(String fName);
+
+//	public List<UserInfo> findByFName(String fName);
 
 }

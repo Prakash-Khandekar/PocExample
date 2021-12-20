@@ -41,8 +41,8 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public String deleteEmployeeByEno(int id) throws UserNotFoundException {
 //		repo.deleteById(id);
-//		return id+"  employee number  Employee deleted";
-//		
+//		return id+"   Employee deleted";
+		
 		
 		Optional<UserInfo> opt=repo.findById(id);
 		  if(opt.isPresent()) {
@@ -54,7 +54,7 @@ public class UserServiceImpl implements IUserService {
 		       //throw new Exception(id+" Tourist not found ");	  
 
 		  }
-//		
+		
 	}
 
 	@Override
@@ -62,13 +62,11 @@ public class UserServiceImpl implements IUserService {
 		return repo.findAll(Sort.by(Direction.ASC, field));
 	}
 
-	@Override
-	public List<UserInfo> findByFName(String fName) {
-		return null;
+//	@Override
+//	public List<UserInfo> findByFName(String fName) {
+//		return repo.findByFName(fName);				
 				
-				
-				
-				}
+//				}
 
 
 

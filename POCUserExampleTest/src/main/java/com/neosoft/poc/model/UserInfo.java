@@ -20,8 +20,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-//@SQLDelete(sql = "UPDATE USER_INFO SET STATUS='deleted' WHERE id=?")  //soft deletion
-//@Where(clause = "STATUS  <> 'deleted' ")  // implicit condition on select operations
+@SQLDelete(sql = "UPDATE USER_INFO SET STATUS='deleted' WHERE id=?")  //soft deletion
+//@Where(clause = "STATUS  = 'deleted' ")  // implicit condition on select operations
 public class UserInfo {
 
 	@Id
@@ -33,6 +33,6 @@ public class UserInfo {
 	private Date DOJ;
 	private Date DOB;
 	private Integer moNo;// Need to take LONG
-	//private String status="active";  // default value to be inserted/updated
+	private String status="active";  // default value to be inserted/updated
 	
 }

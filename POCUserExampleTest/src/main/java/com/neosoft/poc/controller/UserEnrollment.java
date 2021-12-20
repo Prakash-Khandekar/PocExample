@@ -20,7 +20,7 @@ import com.neosoft.poc.service.IUserService;
 public class UserEnrollment {
 	@Autowired
 	private IUserService service;
-
+//Simple API
 	@RequestMapping("/message")
 	public String testMethod() {
 		return "Hello Simple API";
@@ -32,9 +32,9 @@ public class UserEnrollment {
 	}
 
 	@PutMapping("/modify") // 2- Edit User base on user id
-	public ResponseEntity<String> modifyUser(@RequestBody UserInfo tourist) {
+	public ResponseEntity<String> modifyUser(@RequestBody UserInfo user) {
 		try {
-			String msg = service.updateUserDetails(tourist);
+			String msg = service.updateUserDetails(user);
 			return new ResponseEntity<String>(msg, HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -44,7 +44,7 @@ public class UserEnrollment {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> removeToursit(@PathVariable("id") Integer id) {
+	public ResponseEntity<String> removeUser(@PathVariable("id") Integer id) {
 		try {
 			String msg = service.deleteEmployeeByEno(id);
 			return new ResponseEntity<String>(msg, HttpStatus.OK);
@@ -66,8 +66,14 @@ public class UserEnrollment {
 		}
 
 	}
+//	@GetMapping("/searchByName/{name}")
+//	public ResponseEntity<List<UserInfo>> getUserByName(@PathVariable("name") String name) {
+//		return new ResponseEntity<List<UserInfo>>(service.findByFName(name), HttpStatus.OK);
+//	}
 
 }
+
+
 
 //@GetMapping("/deleteUser/{id}")
 //public   String deleteEmployee(@PathVariable Integer id) {

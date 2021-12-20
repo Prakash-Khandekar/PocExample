@@ -26,7 +26,7 @@ public class UserEnrollment {
 		return "Hello Simple API";
 	}
 
-	@RequestMapping("/addUser") // register new user
+	@RequestMapping("/addUser") // register new user 
 	public String saveUserDetails(@RequestBody UserInfo user) {
 		return service.insertEmployee(user); 
 	}
